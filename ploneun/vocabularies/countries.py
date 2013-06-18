@@ -1,9 +1,18 @@
-from zope import schema
+from five import grok
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope.schema.interfaces import IVocabularyFactory
+from zope.component import getUtility
+from z3c.formwidget.query.interfaces import IQuerySource
 
-# Asia-Pacific Countries
-ap = SimpleVocabulary(
+from ploneun.vocabularies import MessageFactory as _
+
+class AsiaPacific(grok.GlobalUtility):
+    grok.name('ploneun.vocabularies.countries.asiapacific')
+    grok.implements(IVocabularyFactory)
+
+    # Asia-Pacific Countries
+    _terms = SimpleVocabulary(
     [SimpleTerm(value=u'AF',
                 title=_(u'Afghanistan')),
     SimpleTerm(value=u'AU',
@@ -66,3 +75,6 @@ ap = SimpleVocabulary(
                 title=_(u'Vietnam')),
     ]
     )
+
+    def __call__(self, context):
+        return self._terms

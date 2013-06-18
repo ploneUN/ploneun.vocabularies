@@ -33,6 +33,7 @@ setup(name='ploneun.vocabularies',
           'collective.dexteritytextindexer',
           'plone.app.multilingual',
           'plone.multilingualbehavior',
+          'ploneun.vocabularies',
           # -*- Extra requirements: -*-
       ],
       extras_require={
