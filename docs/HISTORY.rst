@@ -1,8 +1,8 @@
 Changelog
 =========
 
-'1.0' - Unreleased
----------------------
+0.1 (2013-07-02)
+----------------
 
  - Add in organization types and Asia-Pacific countries
    
